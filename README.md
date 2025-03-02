@@ -59,7 +59,7 @@ Handles the initialization and operations related to product stock checking. It 
 
 ## Contributing
 
-Contributions are welcome! Please read the contributing guidelines first.
+Contributions are welcome!
 
 ## License
 
