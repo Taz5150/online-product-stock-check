@@ -16,7 +16,7 @@ Functions:
     main(): Main function to start the crawling process.
     init(): Initialize the product check module.
 """
-
+import os
 import re
 import aiohttp
 import asyncio
@@ -98,7 +98,7 @@ async def crawl(parsers, url_type):
 async def main():
     """Main function to start the crawling process."""
     parsers = ConfigParser(delimiters=(':'))
-    parsers.read(r'./ini/parsers.ini')
+    parsers.read('./parsers.ini')
 
     await crawl(parsers, 'URLS')
 
