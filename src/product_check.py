@@ -49,8 +49,9 @@ async def fetch(url):
 async def crawl(parsers, url_type):
     """Crawl the URLs and parse the content."""
     output = []
-
+    
     used_tools = {k: v for k, v in parsers.items(url_type)}
+    
     urls = list(used_tools.values())
     tools = list(used_tools.keys())
 
@@ -98,7 +99,8 @@ async def crawl(parsers, url_type):
 async def main():
     """Main function to start the crawling process."""
     parsers = ConfigParser(delimiters=(':'))
-    parsers.read('./parsers.ini')
+    ini_path = os.path.join(os.getcwd(),'src/parsers.ini')
+    parsers.read(ini_path)
 
     await crawl(parsers, 'URLS')
 
