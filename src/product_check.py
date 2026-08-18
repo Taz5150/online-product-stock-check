@@ -99,7 +99,7 @@ async def crawl(parsers, url_type):
 async def main():
     """Main function to start the crawling process."""
     parsers = ConfigParser(delimiters=(':'))
-    ini_path = os.path.join(os.getcwd(),'src/parsers.ini')
+    ini_path = os.path.join(os.getcwd(),'parsers.ini')
     parsers.read(ini_path)
 
     await crawl(parsers, 'URLS')
